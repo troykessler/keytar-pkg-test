@@ -1,4 +1,9 @@
-# Steps to reproduce
+# Challenge: Use keytar together with pkg
+
+Keytar: https://www.npmjs.com/package/keytar (OS Password manager)
+Pkg: https://www.npmjs.com/package/pkg (JS binary compiler)
+
+## Steps to reproduce
 
 Install deps
 
@@ -24,6 +29,8 @@ This should output the following result:
 $node src/index.js
 my_secret
 ```
+
+-> Running with nodejs works
 
 ## 2. Run the program with binaries
 
@@ -52,5 +59,7 @@ Error: dlopen(/var/folders/87/v4ybr8dd4s94yc2w_d9_nxr80000gn/T/pkg/6c32c41c0e5a9
   code: 'ERR_DLOPEN_FAILED'
 }
 ```
+
+-> running with binaries fails
 
 ## Solution to that problem?
