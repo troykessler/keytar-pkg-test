@@ -12,14 +12,18 @@
   "bin": "./src/index.js",
   "pkg": {
     "scripts": "./src/index.js",
+    "assets": [
+      "./node_modules/keytar/build/Release/keytar.node",
+      "./node_modules/keytar/build/Release/keytar.node.bak"
+    ],
     "targets": [
-      "latest-linux-x64",
-      "latest-macos-x64"
+      "latest-linux-arm64"
     ],
     "outputPath": "out"
   },
   "dependencies": {
     "keytar": "^7.9.0",
+    "nexe": "^4.0.0-rc.1",
     "pkg": "^5.8.0"
   }
 }
