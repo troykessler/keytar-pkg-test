@@ -6,24 +6,27 @@
   "author": "Troy Kessler <troy.kessler99@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js",
-    "build": "pkg --no-bytecode --public-packages '*' --output out/kyve package.json"
+    "start": "tsc && node ./dist/index.js",
+    "build": "tsc",
+    "build:binaries": "pkg --no-bytecode --public-packages '*' --output out/kyve package.json"
   },
-  "bin": "./src/index.js",
+  "bin": "./dist/index.js",
   "pkg": {
-    "scripts": "./src/index.js",
-    "assets": [
-      "./node_modules/keytar/build/Release/keytar.node",
-      "./node_modules/keytar/build/Release/keytar.node.bak"
-    ],
+    "scripts": "./dist/index.js",
     "targets": [
-      "latest-linux-arm64"
+      "latest-macos-x64"
     ],
     "outputPath": "out"
   },
   "dependencies": {
-    "keytar": "^7.9.0",
-    "nexe": "^4.0.0-rc.1",
-    "pkg": "^5.8.0"
+    "bcryptjs": "^2.4.3",
+    "pkg": "^5.8.0",
+    "prompts": "^2.4.2",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/node": "^18.6.2",
+    "@types/prompts": "^2.0.14"
   }
 }
