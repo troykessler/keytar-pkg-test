@@ -1,0 +1,25 @@
+{
+  "name": "keytar-pkg-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:troykessler/keytar-pkg-test.git",
+  "author": "Troy Kessler <troy.kessler99@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "pkg --no-bytecode --public-packages '*' --output out/kyve package.json"
+  },
+  "bin": "./src/index.js",
+  "pkg": {
+    "scripts": "./src/index.js",
+    "targets": [
+      "latest-linux-x64",
+      "latest-macos-x64"
+    ],
+    "outputPath": "out"
+  },
+  "dependencies": {
+    "keytar": "^7.9.0",
+    "pkg": "^5.8.0"
+  }
+}
